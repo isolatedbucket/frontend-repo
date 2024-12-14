@@ -1,3 +1,111 @@
 .App {
     text-align: center;
 }
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Body */
+  body {
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark text color */
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 20px;
+  }
+  
+  /* Container for the events */
+  .event-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  /* Event Cards */
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-card h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+  }
+  
+  .event-card p {
+    color: #7f8c8d;
+    margin: 10px 0;
+  }
+  
+  .event-card .event-info {
+    font-size: 1rem;
+    color: #34495e;
+  }
+  
+  .event-card .event-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .event-card .event-details div {
+    margin-top: 10px;
+  }
+  
+  /* Button Style */
+  .button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .event-list-container {
+      padding: 10px;
+    }
+  
+    .event-card {
+      flex-direction: column;
+    }
+  
+    .event-card h2 {
+      font-size: 1.2rem;
+    }
+  
+    .event-card .event-info,
+    .event-card .event-details {
+      font-size: 0.9rem;
+    }
+  }
+  
