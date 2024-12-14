@@ -9,7 +9,7 @@ function EventList() {
 
   useEffect(() => {
     // Fetch events from the API
-    axios.get('http://localhost:5000/events')
+    axios.get('https://backend-repo-174o.onrender.com')
       .then(response => {
         setEvents(response.data);
       })
