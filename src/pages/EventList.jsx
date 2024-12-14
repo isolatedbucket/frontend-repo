@@ -1,25 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-console.log('EventList component loaded!');
-
+// Replace with your live backend URL
+const apiUrl = "https://backend-repo-174o.onrender.com/events";
 
 function EventList() {
   const [events, setEvents] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     // Fetch events from the API
-    axios.get('https://backend-repo-174o.onrender.com')
+    axios.get(apiUrl)
       .then(response => {
         setEvents(response.data);
+        console.log('Events fetched successfully:', response.data);
       })
-      .catch(error => console.error('Error fetching events:', error));
+      .catch(error => {
+        console.error('Error fetching events:', error);
+        setError('Failed to load events. Please try again later.');
+      });
   }, []);
 
   return (
     <div className="event-list-container">
       <h1>Event Listings</h1>
-      {events.length === 0 ? (
+      {error ? (
+        <p className="error-message">{error}</p>
+      ) : events.length === 0 ? (
         <p>No events available.</p>
       ) : (
         events.map(event => (
