@@ -1,111 +1,127 @@
-.App {
-    text-align: center;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Body */
-  body {
-    background-color: #f4f4f4; /* Light gray background */
-    color: #333; /* Dark text color */
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 20px;
-  }
-  
-  /* Container for the events */
+/* Body Styles */
+body {
+  background-color: #f9fafc; /* Softer light gray background */
+  color: #2c3e50; /* Primary text color */
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Main Container for Events */
+.event-list-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+  transition: transform 0.3s ease; /* Subtle hover animation */
+}
+
+.event-list-container:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* Title Styling */
+h1 {
+  text-align: center;
+  color: #34495e;
+  font-size: 2.5rem; /* Slightly larger for impact */
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+/* Event Card Design */
+.event-card {
+  background-color: #fdfefe;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #3498db; /* Blue accent on the left */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px); /* Subtle "lift" effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Event Titles */
+.event-card h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Event Info */
+.event-card .event-info {
+  font-size: 1rem;
+  color: #576574;
+  margin: 8px 0;
+}
+
+/* Event Details Section */
+.event-card .event-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.event-card .event-details div {
+  margin-top: 5px;
+}
+
+/* Button Style */
+.button {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
   .event-list-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
   }
-  
-  /* Title */
-  h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-size: 2rem;
-  }
-  
-  /* Event Cards */
+
   .event-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #ecf0f1;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
   }
-  
+
+  h1 {
+      font-size: 2rem;
+  }
+
   .event-card h2 {
-    font-size: 1.5rem;
-    color: #2c3e50;
+      font-size: 1.4rem;
   }
-  
-  .event-card p {
-    color: #7f8c8d;
-    margin: 10px 0;
-  }
-  
-  .event-card .event-info {
-    font-size: 1rem;
-    color: #34495e;
-  }
-  
+
+  .event-card .event-info,
   .event-card .event-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+      font-size: 0.85rem;
   }
-  
-  .event-card .event-details div {
-    margin-top: 10px;
-  }
-  
-  /* Button Style */
-  .button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  .button:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .event-list-container {
-      padding: 10px;
-    }
-  
-    .event-card {
-      flex-direction: column;
-    }
-  
-    .event-card h2 {
-      font-size: 1.2rem;
-    }
-  
-    .event-card .event-info,
-    .event-card .event-details {
-      font-size: 0.9rem;
-    }
-  }
-  
+}
